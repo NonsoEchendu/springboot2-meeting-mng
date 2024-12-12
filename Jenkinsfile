@@ -3,8 +3,8 @@ pipeline {
     
     environment {
         IMAGE_NAME = 'michaelo001/test-java-app'
-        APP_NAME='java-app'
-        DOCKER_CREDENTIALS_ID
+        APP_NAME = 'java-app'
+        DOCKER_CREDENTIALS_ID = 'docherhub-credentials'
     }
 
     stages {
