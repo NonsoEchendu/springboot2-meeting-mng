@@ -19,7 +19,7 @@ pipeline {
                 script {
                     sh '''
                         echo "checking if docker exists"
-                        docker ps
+                        sudo apt-get update
                     '''
                 }
             }
