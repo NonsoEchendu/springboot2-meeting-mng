@@ -4,13 +4,24 @@ pipeline {
     environment {
         IMAGE_NAME = 'michaelo001/test-java-app'
         APP_NAME = 'java-app'
-        DOCKER_CREDENTIALS_ID = 'docherhub-credentials'
+        DOCKER_CREDENTIALS_ID = 'dockerhub-credentials'
     }
 
     stages {
         stage('checkout') {
             steps {
                 checkout scm
+            }
+        }
+
+        stage('Check for Docker') {
+            steps {
+                script {
+                    sh '''
+                        echo "checking if docker exists"
+                        docker ps
+                    '''
+                }
             }
         }
 
