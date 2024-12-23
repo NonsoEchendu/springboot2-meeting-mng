@@ -57,7 +57,9 @@ pipeline {
         stage('Build docker image') {
             steps {
                 script {
-                    docker.build("${IMAGE_NAME}:${BUILD_NUMBER}")
+                    sh """
+                        docker build -t ${IMAGE_NAME}:${BUILD_NUMBER} .
+                    """
                 }
             }
         }
