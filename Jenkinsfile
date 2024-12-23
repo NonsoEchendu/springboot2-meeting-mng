@@ -43,16 +43,16 @@ pipeline {
             }
         }
 
-        // stage('Check for Docker') {
-        //     steps {
-        //         script {
-        //             sh '''
-        //                 echo "checking if docker exists"
-        //                 apt-get update
-        //             '''
-        //         }
-        //     }
-        // }
+        stage('Check for Docker') {
+            steps {
+                script {
+                    sh '''
+                        echo "checking if docker exists"
+                        docker ps
+                    '''
+                }
+            }
+        }
 
         stage('Build docker image') {
             steps {
